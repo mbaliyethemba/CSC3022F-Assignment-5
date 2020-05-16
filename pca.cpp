@@ -46,7 +46,7 @@ void pca::read_july(){
 
 //finds the mean
 void pca::find_mean(){
-	double jansum;
+	double jansum = 0;
 	//finds the sum for jan
 	for(size_t i = 0; i < this->jan.size(); i++){
 		jansum += this->jan[i];
@@ -57,7 +57,7 @@ void pca::find_mean(){
 		this->jan[i] = janmean - this->jan[i];
 	}
 	
-	double julysum;
+	double julysum = 0;
 	//finds the sum for july
 	for(size_t i = 0; i < this->july.size(); i++){
 		julysum += this->july[i];
@@ -67,4 +67,14 @@ void pca::find_mean(){
 	for(size_t i = 0; i < this->july.size(); i++){
 		this->july[i] = julymean - this->july[i];
 	}
+}
+
+//finds the covariance of matrix
+double pca::find_covariance(std::vector<double> x, std::vector<double> y){
+	double product = 0;
+	for(size_t i = 0; i < x.size(); i++){
+		product += x[i] * y[i];
+	}
+	
+	return (product)/(x.size() - 1);
 }
