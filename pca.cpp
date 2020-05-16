@@ -21,7 +21,7 @@ void pca::read_january(){
 			this->jan.push_back(std::stod(s));
 		}
 		janFile.close();
-		std::cout << "File has been read" << std::endl;
+		std::cout << "January Observations has been read" << std::endl;
 	}
 	else{
 		std::cerr << "Unable to open file." << std::endl;
@@ -37,7 +37,7 @@ void pca::read_july(){
 			this->july.push_back(std::stod(s));
 		}
 		julFile.close();
-		std::cout << "File has been read" << std::endl;
+		std::cout << "July Observations has been read" << std::endl;
 	}
 	else{
 		std::cerr << "Unable to open file." << std::endl;
@@ -58,12 +58,12 @@ void pca::find_mean(){
 	}
 	
 	double julysum;
-	//finds the sum for jan
+	//finds the sum for july
 	for(size_t i = 0; i < this->july.size(); i++){
 		julysum += this->july[i];
 	}
 	double julymean = julysum / this->july.size();
-	//restructor the jan vector using mean
+	//restructor the july vector using mean
 	for(size_t i = 0; i < this->july.size(); i++){
 		this->july[i] = julymean - this->july[i];
 	}
