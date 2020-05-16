@@ -8,3 +8,6 @@
 
 //constructor
 pca::pca(){}
+
+//destructor
+pca::~pca(){}
