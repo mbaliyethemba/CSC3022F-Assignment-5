@@ -27,6 +27,7 @@ class pca{
 		~pca(); //destructor
 		void read_january(); //read the averages of rainfall in january
 		void read_july(); //read the averages of rainfall in july
+		void find_mean();
 };
 
 #endif
