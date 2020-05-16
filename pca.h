@@ -25,8 +25,8 @@ class pca{
 	public:
 		pca(); //constructor
 		~pca(); //destructor
-		void read_january(); //read the averages of rainfall in january 
-		
+		void read_january(); //read the averages of rainfall in january
+		void read_july(); //read the averages of rainfall in july
 };
 
 #endif
