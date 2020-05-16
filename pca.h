@@ -27,6 +27,7 @@ class pca{
 		void read_january(); //read the averages of rainfall in january
 		void read_july(); //read the averages of rainfall in july
 		void find_mean(); //finds the mean
+		void find_covariance(std::vector<double>,std::vector<double>); //finds the covariance of matrix
 };
 
 #endif
