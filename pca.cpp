@@ -27,3 +27,19 @@ void pca::read_january(){
 		std::cerr << "Unable to open file." << std::endl;
 	}
 }
+
+//read the averages of rainfall in july
+void pca::read_july(){
+	std::ifstream julFile("July Observations.txt", std::ios::in);
+	if(julFile.is_open()){
+		std::string s;
+		while(std::getline(julFile, s)){
+			this->jul.push_back(std::stod(s));
+		}
+		julFile.close();
+		std::cout << "File has been read" << std::endl;
+	}
+	else{
+		std::cerr << "Unable to open file." << std::endl;
+	}
+}
