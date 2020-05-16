@@ -9,6 +9,7 @@
 #include <string>
 #include <fstream>
 #include <functional>
+#include <numeric>
 #include "Eigen/Dense"
 
 #ifndef PCA_H
