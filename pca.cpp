@@ -90,3 +90,19 @@ void pca::covariance_matrix(){
 	v.push_back(find_covariance(this->july, this->july));
 	this->matrix.push_back(v);
 }
+
+//set the eigen value
+void pca::eigen(){
+	std::ofstream outfile;
+	outfile.open("output_answers.txt");
+	if(outfile.is_open()){
+		Matrix2f e;
+		e << this->matrix[0][0], this->matrix[0][1], this->matrix[1][0], this->matrix[1][1];
+		SelfAdjointEigenSolver<Matrix2f> esolver(e);
+		if(esolver.info() != Success) abort();
+		outfile << "The eigenvalues are:\n" << esolver.eigenvalues() << std::endl;
+		outfile << "Eigenvectors :\n" << esolver.eigenvectors() << std::endl;
+		outfile << "Matrix :\n" << e << std::endl;
+	}
+}
+
