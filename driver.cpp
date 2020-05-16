@@ -13,4 +13,6 @@ int main(int argc, char const *argv[]){
 	p.read_january();
 	p.read_july();
 	p.find_mean();
+	p.covariance_matrix();
+	p.eigen();
 }
