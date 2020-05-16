@@ -8,8 +8,8 @@
 #include <vector>
 #include <string>
 #include <fstream>
-#include <functional>   // std::minus
-#include <numeric>      // std::accumulate
+#include <functional>
+#include <numeric>
 #include "Eigen/Dense"
 
 #ifndef PCA_H
@@ -24,6 +24,7 @@ class pca{
 	
 	public:
 		pca(); //constructor
+		~pca(); //destructor
 };
 
 #endif
