@@ -9,7 +9,6 @@
 #include <string>
 #include <fstream>
 #include <functional>
-#include <numeric>
 #include "Eigen/Dense"
 
 #ifndef PCA_H
@@ -19,7 +18,7 @@ using namespace Eigen;
 
 class pca{
 	private:
-		std::vector<double> jan, jul;
+		std::vector<double> jan, july;
 		std::vector<std::vector<double>> matrix;
 	
 	public:
@@ -27,7 +26,7 @@ class pca{
 		~pca(); //destructor
 		void read_january(); //read the averages of rainfall in january
 		void read_july(); //read the averages of rainfall in july
-		void find_mean();
+		void find_mean(); //finds the mean
 };
 
 #endif
