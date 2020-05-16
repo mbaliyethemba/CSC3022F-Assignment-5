@@ -100,9 +100,36 @@ void pca::eigen(){
 		e << this->matrix[0][0], this->matrix[0][1], this->matrix[1][0], this->matrix[1][1];
 		SelfAdjointEigenSolver<Matrix2f> esolver(e);
 		if(esolver.info() != Success) abort();
-		outfile << "The eigenvalues are:\n" << esolver.eigenvalues() << std::endl;
-		outfile << "Eigenvectors :\n" << esolver.eigenvectors() << std::endl;
-		outfile << "Matrix :\n" << e << std::endl;
+		outfile << "Question 1" << std::endl;
+		outfile << "The eigenvalues are:" <<std::endl;
+		outfile << "July    : " << esolver.eigenvalues()[1] << std::endl;
+		outfile << "January : " << esolver.eigenvalues()[0] << std::endl;
+		outfile << " " << std::endl;
+		outfile << "**********************" << std::endl;
+		outfile << "Question 2" << std::endl;
+		outfile << "        | " << "  july  |" << " january" << std::endl;
+		outfile << "--------|---------|---------" << std::endl;
+		outfile << "July    | " << esolver.eigenvectors().row(1).col(1) << "|" << esolver.eigenvectors().row(1).col(0) << std::endl;
+		outfile << "--------|---------|---------" << std::endl;
+		outfile << "January | " << esolver.eigenvectors().row(0).col(1) << "|" << esolver.eigenvectors().row(0).col(0) << std::endl;
+		outfile << " " << std::endl;
+		outfile << "**********************" << std::endl;
+		outfile << "Question 3" << std::endl;
+		outfile << "        | " << "  july  |" << " january" << std::endl;
+		outfile << "--------|---------|---------" << std::endl;
+		outfile << "July    | " << matrix[1][1] << " | " << matrix[1][0] << std::endl;
+		outfile << "--------|---------|---------" << std::endl;
+		outfile << "January | " << matrix[0][1] << " | " << matrix[0][0] << std::endl;
+		outfile << " " << std::endl;
+		outfile << "**********************" << std::endl;
+		outfile << "Question 4" << std::endl;
+		outfile << "Variance :\n" << (matrix[0][0] + matrix[1][1]) << std::endl;
+		outfile << " " << std::endl;
+		outfile << "**********************" << std::endl;
+		outfile << "Question 5" << std::endl;
+		outfile << "Component 1 with eigenvalue "<< esolver.eigenvalues()[1]<< " explains about "<< lround((esolver.eigenvalues()[1]/(matrix[0][0] + matrix[1][1])) * 100)<<"% of the total variance." <<std::endl;
+		outfile << "Component 2 with eigenvalue "<< esolver.eigenvalues()[0] << " explains about " << lround((esolver.eigenvalues()[0]/(matrix[0][0] + matrix[1][1])) * 100)<<"% of the total variance." <<std::endl;
+		outfile << "The eigenvalues sum to the total variance." << std::endl;
 	}
 }
 
