@@ -29,6 +29,7 @@ class pca{
 		void find_mean(); //finds the mean
 		double find_covariance(std::vector<double>,std::vector<double>); //finds the covariance of matrix
 		void covariance_matrix(); //sets the matrix
+		void eigen(); //sets the eigen values
 };
 
 #endif
