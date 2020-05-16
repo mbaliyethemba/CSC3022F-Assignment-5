@@ -76,5 +76,17 @@ double pca::find_covariance(std::vector<double> x, std::vector<double> y){
 		product += x[i] * y[i];
 	}
 	
-	return (product)/(x.size() - 1);
+	return (product)/63;
+}
+
+//set the matrix
+void pca::covariance_matrix(){
+	std::vector<double> v;
+	v.push_back(find_covariance(this->jan, this->jan));
+	v.push_back(find_covariance(this->jan, this->july));
+	this->matrix.push_back(v);
+	v.clear();
+	v.push_back(find_covariance(this->july, this->jan));
+	v.push_back(find_covariance(this->july, this->july));
+	this->matrix.push_back(v);
 }
