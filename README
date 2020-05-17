@@ -1,1 +1,21 @@
+Student Name: Mbaliyethemba Shangase
+Student Number: SHNMBA004
+Due Date: 17/05/2020
+Assignment 5
 
+Files:
+	Eigen folders - library used to be include in order to find the eigen values to answer the questions.
+	2018-AvgRainfall_mm_.rtf - the source information holding the obervations of rain fall in january and july.
+	January Observations.txt - holds the 64 observations for January taken from the 2018-AvgRainfall_mm_.rtf file.
+	July Observations.txt - holds the 64 observations for July taken from the 2018-AvgRainfall_mm_.rtf file.
+	driver.cpp - allows the user to interface with the program.
+	pca.cpp - classed used to perform pca on the given source information and holds all the functions required for the program.
+	pca.h - library class
+	output_answers.txt - holds the answers to the questions given in the assignment document and the output of the program
+	
+Instructions:
+	1. Unzip the folder holding the assignment.
+	2. a) The output_answers.txt already exist and holds the answers for the questions.
+	   b) Type 'make' in the terminal.
+	3. Type 'make run' or './pca' in the terminal to run the program.
+	4. When finished type 'make clean' to clean the binary files.
