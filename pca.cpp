@@ -93,6 +93,7 @@ void pca::covariance_matrix(){
 
 //set the eigen value
 void pca::eigen(){
+	std::cout << "Printing the output file....output_answers.txt" << std::endl;
 	std::ofstream outfile;
 	outfile.open("output_answers.txt");
 	if(outfile.is_open()){
